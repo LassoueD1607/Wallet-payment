@@ -1,0 +1,40 @@
+<div class="container mt-5 ">
+  <div class="row justify-content-md-center">
+    <span class="border p-4" style="max-width: 500px;">
+      <div class="alert alert-success" *ngIf=checkResponse()>
+        <h6 class="text-center"><strong>Success</strong></h6>
+      </div>
+
+      <div class="row">
+        <div style="margin-left: 50px ; margin-bottom: 25px;"><img src="../../assets/logo.png" alt=""> <br></div>
+      </div>
+      <div class="row my-4">
+        <div class="col-6"><a class="btn btn-outline-danger"  [ngClass]="{'active': select == 1}" style="width: 100%;"
+            (click)="selectQRCode()">QR Code</a></div>
+        <div class="col-6"><a class="btn btn-outline-danger"  [ngClass]="{'active': select == 0}" style="width: 100%;"
+            (click)="selectForm()">Form</a></div>
+      </div>
+      <div class="row">
+        <p>Order details:</p>
+        <div>
+          <div class=" px-4  py-2" style="background-color:#bababa;
+          border-radius: 3%;" >
+            <strong class="">Order :  <span class="float-end "> {{orderId}} </span></strong> <br>
+            <strong class="">Merchant: <span class="float-end "> {{merchant}} </span></strong><br>
+            <strong class="">Amount:<span class="float-end "> {{amount}} </span></strong><br>
+
+          </div>
+        </div>
+
+      </div>
+      <hr>
+      <app-form *ngIf="select==0" [value]="amount"></app-form>
+      <app-qrcode *ngIf="select==1"></app-qrcode>
+      
+
+
+    </span>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

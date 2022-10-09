@@ -1,0 +1,72 @@
+<div class="container mt-5 ">
+    <div class="row justify-content-md-center">
+        <span class="border p-4" style="max-width: 500px;">
+            <div class="row">
+                <div style="margin-left: 50px ; margin-bottom: 25px;"><img src="../../assets/logo.png" alt=""> <br>
+                </div>
+            </div>
+            
+            <div class="mx-2 text-secondary" style="font-size: 120%;"><strong>Sign Up</strong></div>
+            <hr>
+            <div class="row my-2">
+                <div class="mb-3">
+                    <input type="text" name="firstName" class="form-control" placeholder="First name" [(ngModel)]="user.firstName">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="lastName" class="form-control" placeholder="Last name" [(ngModel)]="user.lastName" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="email" class="form-control" placeholder="Email" [(ngModel)]="user.email" required>
+                </div>
+                <div class="mb-3">
+                    <input type="tel" name="phoneNumber" class="form-control" placeholder="Phone number" [(ngModel)]="user.phoneNumber" required>
+                </div>
+               
+                <div class="mb-3">
+                    <input type="text" name="RIB" class="form-control" placeholder="RIB"  [(ngModel)]="user.RIB" required>
+                </div>
+                <div class="mb-3">
+                    
+                    <select name="bankName" id="bankName" class="form-control form-select" [(ngModel)]="user.bankName">
+                      <option> Banque Al-Baraka </option>
+                      <option> Arab Tunisian Bank (ATB) </option>
+                      <option> Banque Franco Tunisienne (BFT) </option>
+                      <option> Banque Nationale Agricole (BNA) </option>
+                      <option> Attijari Bank </option>
+                      <option> Banque de Tunisie (BT) </option>
+                      <option selected> Amen Bank (AB) </option>
+                      <option> Banque Internationale Arabe de Tunisie (BIAT) </option>
+                      <option> Société Tunisienne de Banque (STB) </option>
+                      <option> Union de Bancaire pour le Commerce et l’Industrie (UBCI) </option>
+                      <option> Union Internationale de Banques (UIB) </option>
+                      <option> Banque de l'Habitat (BH) </option>
+                      <option> Citibank </option>
+                      <option> Banque Tunisienne de Solidarite (BTS) </option>
+                      <option> Arab Banking Corporation (ABC) and its subsidiary: ABC Tunisie </option>
+                      <option> Tunisian Qatari Bank (TQB) </option>
+                      <option> Banque de Tunisie et des Emirats (BTE) </option>
+                      <option> Banque Tuniso-Koweitienne (BTK) </option>
+                      <option> Banque de Financement des Petites et Moyennes Enterprises (BFPME) </option>
+                      <option> Banque Tuniso-Libyenne (BTL) </option>
+                      <option> Stusid Bank (STUSID) </option>
+                      <option> Banque Zitouna (ZITOUNA) </option>
+                      <option> Al Wifak Bank (WIFAK) </option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="password2" class="form-control" placeholder="Verify password" [(ngModel)]="user.password2" required>
+                </div>
+                  
+            </div>
+            <a type="button" class="btn btn-outline-primary col-12 mt-2" (click)="onSign()"   >Create new account</a>
+            <hr>
+            <a type="button" class="btn btn-outline-success col-12" [routerLink]="['/']"  >Back</a>    
+
+        </span>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

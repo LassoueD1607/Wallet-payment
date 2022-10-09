@@ -1,0 +1,44 @@
+<div class="container mt-5 ">
+    <div class="row justify-content-md-center">
+        <span class="border p-4" style="max-width: 500px;">
+
+            
+
+
+            <div class="row">
+                <div style="margin-left: 50px ; margin-bottom: 25px;"><img src="../../assets/logo.png" alt=""> <br>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col-6"><button class="btn btn-outline-danger" [ngClass]="{'active': select == 1}"
+                        style="width: 100%;" (click)="selectQRCode()" [disabled]="true" >QR Code</button></div>
+                <div class="col-6"><a class="btn btn-outline-danger" [ngClass]="{'active': select == 0}"
+                        style="width: 100%;" (click)="selectForm()">Form</a></div>
+            </div>
+            <div class="row">
+                <p>Order details:</p>
+                <div>
+                    <div class="px-4  py-2" style="background-color:#bababa;
+                    border-radius: 3%;" >
+                      <strong class="">Order :  <span class="float-end "> {{orderId}} </span></strong> <br>
+                      <strong class="">Merchant: <span class="float-end "> {{merchant}} </span></strong><br>
+                      <strong class="">Amount:<span class="float-end "> {{amount}} </span></strong><br>
+          
+                    </div>
+                  </div>
+
+            </div>
+            <hr>
+            <div class="m-3"><p>A validation SMS is sent to your phone.</p></div>
+            <div class="m-4">
+                <input type="text" name="firstName" class="form-control" placeholder="Enter the code" [(ngModel)]="validationSMS" required>
+            </div>
+            <div class="row justify-content-md-center mx-5 my-2 ">
+                <button type="button" class="btn btn-outline-success" >Send</button>
+            </div>
+            <hr class="mx-5">
+            <div class="row justify-content-md-center mx-5 my-2">
+                <button type="button" class="btn btn-outline-primary" [routerLink]="['/']" >Back</button>
+            </div>
+        </span>
+    </div>

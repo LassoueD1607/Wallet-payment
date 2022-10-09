@@ -1,0 +1,73 @@
+<H1>Purchase List</H1>
+<hr>
+<br>
+
+
+<div class="row">
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Quantity</th>
+
+                <th>Action</th>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of purchaseList$|async">
+
+                    <td> {{item.productName}} </td>
+                    <td> {{item.category}} </td>
+                    <td> {{item.price}} </td>
+                    <td><input type="number" name="quantity" id="quantity" class="form-control-sm" value="1"
+                            (input)="onUpdateQuantity($event)"></td>
+
+
+
+                    <td><a class="btn btn-secondary" (click)="buy(item)"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                            </svg></a>
+                    </td>
+
+
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+    <div class="col-3" *ngIf="letsBuy()">
+        <h2>Cart</h2>
+        <table class="table table-striped">
+            <thead>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Amout</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let input of cartList">
+                    <td> {{input.productName}} </td>
+                    <td> {{input.quantity}} </td>
+                    <td>{{input.price * input.quantity}}</td>
+
+
+                </tr>
+
+            </tbody>
+        </table>
+        <h2 class="float-end"> Total: {{total}} </h2><br><br>
+        <a class="btn btn-primary float-end" (click)="confirm()">Confirm</a>
+
+
+
+    </div>
+
+</div>
+<div class="col-2">
+    <a class="btn btn-primary" routerLink="/buy">Go buy</a>
+</div>

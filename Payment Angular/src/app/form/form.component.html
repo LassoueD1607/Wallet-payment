@@ -1,0 +1,22 @@
+
+      <div class="row my-4">
+        <div class="mb-3">
+          <input type="text" name="tel" class="form-control" placeholder="Telephone number" [(ngModel)]="telephone">
+        </div>
+        <div class="mb-3">
+          <input type="password" name="password" class="form-control" [(ngModel)]="password" placeholder="Password"  required>
+        </div>
+        <div class="text-center">
+          <a type="button" class="btn btn-outline-primary col-12 mb-2" [routerLink]="['/validation']" (click)="onContinue()"> Connect </a> 
+          <!--[routerLink]="['/verification']"-->
+          
+            <!--(click)="display()"href="http://localhost:4200/response-->
+          <a class="btn" style="font-size: 85%;"> Forget Password? </a>
+           
+          <hr>
+          <a type="button" class="btn btn-outline-success col-12 mt-2" [routerLink]="['/signup']"  >Create new account</a>
+          
+        </div>
+      </div>
+
+     
